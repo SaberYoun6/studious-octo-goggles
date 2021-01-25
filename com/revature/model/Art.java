@@ -8,9 +8,11 @@ public class Art{
 	private boolean isProfessional;
 	private	int number;
 	private String artists;
+	private String works;
 
 	public Art(){
 	}
+	
 	public Art(String artist) {
 		this();
 		setArtist(artist);
@@ -28,8 +30,12 @@ public class Art{
 		this(artist,artists,stylized);
 		setMedium(medium);
 	}
+	public Art(String artist, String artists, String stylized, String medium, String works) {
+		this(artist,artists,stylized,medium);
+		this.works = works;
+	}
 	public Art(String artist,String artists, String stylized,String medium, String description) {
-		this(artist,artists,stylized);
+		this(artist,artists,stylized,medium, works,decription);
 		setDescription(description);
 	}
 	
@@ -48,8 +54,8 @@ public class Art{
 	public String descriptionImage( ){
 		return description;
 	}
-	public boolean professional(){
-		return isProfessional;
+	public String professional( boolean isProfessional){
+		return "this is a boolean" +isProfessional;
 	}
 	public String getMedium() {
 		return medium;
