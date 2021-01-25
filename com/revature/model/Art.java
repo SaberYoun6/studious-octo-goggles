@@ -50,6 +50,7 @@ public class Art{
 	public String mediums(){
 		return "mediums";
 	}
+	
 	public String artist(){
 		return artist + " " + artists;
 	}

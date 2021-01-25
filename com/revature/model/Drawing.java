@@ -14,28 +14,18 @@ public class Drawing extends Art{
 	public void setArtists(String artists) {
 		this.artists = artists.substring(0,1).toUpperCase() + artists.substring(1);
 	}
-	public Drawing(){
+	public Drawing(String artist, String artists){
+		super(artist,artists);
+	}
+	public Drawing(String artist,String artists,String style,String medium){
 		super(artist,artists,style,medium);
 	}
-	public Drawing(String artist,String artists){
-		this();
+	public Drawing (String artist,String artists,String style,String medium,String works, String description){
+		super(artist,artists,style,medium,works,description);
 	}
-	public Drawing (String artist,String artists,String style,String medium){
-		this(artist,artists);
-		this.style = style;
-		this.medium = medium;
-	}
-	public Drawing(String artist, String artists,String style, String medium, String works){
-		this(artist,artists, style, medium);
-		this.works= works;
-		
-	}
-	public Drawing(String artist,String artists, String style, String medium, String works, String description){
-		this(artist,artists,style,medium,works);
-		this.description = description;
-	}
+	@Override
 	public String artist(){
-		return" This artist does draw" + this.artist + this.artists;
+		return"This artist is " + this.artist+ " " + this.artists + ".";
 	}
 	public String mediums(){
 		return "This artist does draws in this " + medium;

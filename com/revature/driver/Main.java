@@ -15,9 +15,10 @@ public class Main{
 		System.out.println(piabloArt.artist());
 		System.out.println(brainChui.getArtist() +" "+ brainChui.getArtists());
 		System.out.println(brainChui.artist());
+		Art davinci = new Drawing("leonardo","davinci","Skecthing","Ink");
+		System.out.println(davinci.artist());
 		System.out.printf("%s\n","s" );
-		
-		//(Drawing) (myArt.setMedium("Ink"));
+
 
 	}
 }

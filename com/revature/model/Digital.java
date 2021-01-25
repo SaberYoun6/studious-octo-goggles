@@ -60,7 +60,7 @@ public class Digital extends Art{
 		setProfessional(isProfessional);
 	}
 	
-
+	@Override
 	public String artist(){
 		return super.getArtist() + " " + super.getArtists();
 	}
