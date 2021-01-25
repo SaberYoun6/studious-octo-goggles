@@ -1,9 +1,6 @@
 package com.revature.model;
 
 public class Digital extends Art{
-	public String getArtist() {
-		return artist;
-	}
 	public String getStyle() {
 		return style;
 	}
@@ -34,7 +31,6 @@ public class Digital extends Art{
 	public String getWorks() {
 		return works;
 	}
-	private String artist;
 	private String style;
 	private String  medium;
 	private int numberOfPrint;
@@ -48,16 +44,15 @@ public class Digital extends Art{
 	public Digital(String firstName, String lastName){
 		super(firstName,lastName);
 	}
+	public Digital(String firstName,String lastName,String style, String medium) {
+		super( firstName, lastName,style,medium);
+	}
 	public Digital(String firstName,String lastName,String style, String medium, String works, String description) {
-		this( firstName, lastName);
-		super.setStylized(style);
-		super.setMedium(medium);
-		super.setWorks(works);
-		super.setDescription(description);
+		super(firstName,lastName,style,medium,works,description);
 	}
 	
 	public Digital(String firstName,String lastName,String style, String medium, String works, String description, int numberOfPrint ){
-		this(firstName,lastName,style, medium, works,description);
+		super(firstName,lastName,style, medium, works,description);
 		setNumbOfPrint(numberOfPrint);
 	}
 	public Digital(String firstName, String lastName, String style, String medium,String works,String description, int numberOfPrint, boolean isProfessional){
@@ -67,7 +62,7 @@ public class Digital extends Art{
 	
 
 	public String artist(){
-		return getFirstName() + " " + getLastName();
+		return super.getArtist() + " " + super.getArtists();
 	}
 	public int numOfPrint(){
 		return numberOfPrint;
@@ -77,10 +72,6 @@ public class Digital extends Art{
 	}
 	public void setStyle(String style){
 		this.style = style;
-	}
-	public void setArtist(String firstName, String lastName){
-		setFirstName(firstName);
-		setLastName(lastName);
 	}
 	public String mediums(){
 		return medium;
