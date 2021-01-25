@@ -10,6 +10,14 @@ public class Art{
 	private String artists;
 	private String works;
 
+	public String getWorks() {
+		return works;
+	}
+
+	public void setWorks(String works) {
+		this.works = works;
+	}
+
 	public Art(){
 	}
 	
@@ -32,10 +40,10 @@ public class Art{
 	}
 	public Art(String artist, String artists, String stylized, String medium, String works) {
 		this(artist,artists,stylized,medium);
-		this.works = works;
+		setWorks(works);
 	}
-	public Art(String artist,String artists, String stylized,String medium, String description) {
-		this(artist,artists,stylized,medium, works,decription);
+	public Art(String artist,String artists, String stylized,String medium,String works, String description) {
+		this(artist,artists,stylized,medium,works);
 		setDescription(description);
 	}
 	

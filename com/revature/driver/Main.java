@@ -7,15 +7,16 @@ import com.revature.model.Painting;
 
 public class Main{
 	public static void main(String [] args){
-		Art samArt = new Art("sam","young");
-		Digital brainChui= new Digital("brain","chui");
+		Art piabloArt = new Art("Piablo","Piccaso");
+		Art brainChui = new Digital("brain","chui");
 		brainChui.professional(true);
-		brainChui.setmediums("photoShop");
-		brainChui.setStyle("Multiply features");
-		System.out.println(samArt.artist());
-		System.out.println(brainChui.getFirstName() +" "+ brainChui.getLastName());
+		brainChui.setMedium("photoShop");
+		brainChui.setStylized(("Multiply features"));
+		System.out.println(piabloArt.artist());
+		System.out.println(brainChui.getArtist() +" "+ brainChui.getArtists());
 		System.out.println(brainChui.artist());
 		System.out.printf("%s\n","s" );
+		
 		//(Drawing) (myArt.setMedium("Ink"));
 
 	}

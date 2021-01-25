@@ -15,12 +15,10 @@ public class Drawing extends Art{
 		this.artists = artists.substring(0,1).toUpperCase() + artists.substring(1);
 	}
 	public Drawing(){
-		super();
+		super(artist,artists,style,medium);
 	}
 	public Drawing(String artist,String artists){
 		this();
-		setArtist(artist);
-		setArtists(artists);
 	}
 	public Drawing (String artist,String artists,String style,String medium){
 		this(artist,artists);

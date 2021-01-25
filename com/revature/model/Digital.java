@@ -43,45 +43,31 @@ public class Digital extends Art{
 	private String description;
 	private boolean isProfessional;
 	private String works;
-
-	public Digital(){
-		super();
-	}
+	
+	
 	public Digital(String firstName, String lastName){
-		this();
-		Digital digital= new Digital();
-		setFirstName(firstName);
-		setLastName(lastName);
-		digital.setArtist(firstName,lastName);
+		super(firstName,lastName);
 	}
-	public Digital(String firstName,String lastName, String style, String medium){
-		this( firstName,lastName);
-		Digital digital = new Digital();
-		digital.setStyle(style);
-		digital.setmediums(medium);
+	public Digital(String firstName,String lastName,String style, String medium, String works, String description) {
+		this( firstName, lastName);
+		super.setStylized(style);
+		super.setMedium(medium);
+		super.setWorks(works);
+		super.setDescription(description);
 	}
-	public Digital(String firstName,String lastName,String style, String medium, int numberOfPrint){
-		this(firstName,lastName,style, medium);
-		Digital digital = new Digital();
-		digital.setNumbOfPrint(numberOfPrint);
+	
+	public Digital(String firstName,String lastName,String style, String medium, String works, String description, int numberOfPrint ){
+		this(firstName,lastName,style, medium, works,description);
+		setNumbOfPrint(numberOfPrint);
 	}
-	public Digital(String firstName, String lastName, String style, String medium, int numberOfPrint, boolean isProfessional){
-		this(firstName, lastName,style, medium, numberOfPrint);
-		Digital digital = new Digital();
-		digital.setProfessional(isProfessional);
+	public Digital(String firstName, String lastName, String style, String medium,String works,String description, int numberOfPrint, boolean isProfessional){
+		this(firstName, lastName,style, medium,works,description,numberOfPrint);
+		setProfessional(isProfessional);
 	}
-	public Digital(String firstName,String lastName, String style, String medium, int numberOfPrint, boolean isProfessional, String description){
-		this(firstName,lastName,style,medium,numberOfPrint,isProfessional);
-		this.description = description;
-	}
-	public Digital(String firstName, String lastName, String style, String medium, int numberOfPrint, boolean isProfessional,String description,String works){
-		this(firstName,lastName,style,medium,numberOfPrint,isProfessional,description);
-		this.works = works;
-	}
-
+	
 
 	public String artist(){
-		return firstName +" " +lastName;
+		return getFirstName() + " " + getLastName();
 	}
 	public int numOfPrint(){
 		return numberOfPrint;
@@ -93,10 +79,8 @@ public class Digital extends Art{
 		this.style = style;
 	}
 	public void setArtist(String firstName, String lastName){
-		Digital digital = new Digital();
-		digital.setFirstName(firstName);
-		digital.setLastName(lastName);
-
+		setFirstName(firstName);
+		setLastName(lastName);
 	}
 	public String mediums(){
 		return medium;
