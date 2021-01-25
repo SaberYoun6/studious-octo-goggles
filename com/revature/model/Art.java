@@ -7,38 +7,49 @@ public class Art{
 	private String description;
 	private boolean isProfessional;
 	private	int number;
+	private String artists;
 
 	public Art(){
 	}
 	public Art(String artist) {
-		this.artist= artist;
+		this();
+		setArtist(artist);
 	}
-	public Art(String artist,String stylized) {
+	public Art(String artist,String artists) {
 		this(artist);
-		this.stylized= stylized;
+		setArtists(artists);
 	}
-	public Art(String artist, String stylized, String description) {
-		this(artist,stylized);
-		this.description= description;
+	public Art(String artist, String artists, String stylized) {
+		this(artist, artists);
+		setStylized(stylized);
+		
+	}
+	public Art(String artist, String artists, String stylized, String medium){
+		this(artist,artists,stylized);
+		setMedium(medium);
+	}
+	public Art(String artist,String artists, String stylized,String medium, String description) {
+		this(artist,artists,stylized);
+		setDescription(description);
 	}
 	
-	public String mediums(String medium){
-		return "generic medium statment";
+	public String mediums(){
+		return "mediums";
 	}
 	public String artist(){
-		return artist;
+		return artist + " " + artists;
 	}
 	public String style() {
-		return "generic style";
+		return stylized;
 	}
 	public int numOfPrint(int number ){
 		return 0;
 	}
-	public String descriptionImage( String description){
-		return " Generic descriptoin Image ";
+	public String descriptionImage( ){
+		return description;
 	}
-	public String professional( boolean isProfessional){
-		return  "false";
+	public boolean professional(){
+		return isProfessional;
 	}
 	public String getMedium() {
 		return medium;
@@ -50,7 +61,7 @@ public class Art{
 		return artist;
 	}
 	public void setArtist(String artist) {
-		this.artist = artist;
+		this.artist = artist.substring(0,1).toUpperCase().concat(artist.substring(1));
 	}
 	public String getStylized() {
 		return stylized;
@@ -75,5 +86,12 @@ public class Art{
 	}
 	public void setNumber(int number) {
 		this.number = number;
+	}
+	public String getArtists() {
+		return artists;
+	}
+	public void setArtists(String artists) {
+		this.artists=  artists.substring(0,1).toUpperCase().concat(artists.substring(1));
+	
 	}
 }	
